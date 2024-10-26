@@ -1,4 +1,5 @@
 # next-js-15-project
+
 This is an web project which will show some functionality using typescript, nextjs 15 and tailwind CSS
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
@@ -37,7 +38,7 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
-# Important HTML Tags
+## Important HTML Tags
 
 ## Semantic HTML Elements
 
@@ -129,7 +130,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 - `<label></label>`  
   Associates a text label with a form element, improving acces
 
-# Tailwind CSS - Essential CSS Properties
+## Tailwind CSS - Essential CSS Properties
 
 ## Layout
 
@@ -144,8 +145,11 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 - **Margin**: Adds space outside an element.  
   - **Tailwind**: `m-{size}`, `mt-{size}`, `mr-{size}`, `mb-{size}`, `ml-{size}`
 
+  - **Margin top**: In Tailwind CSS, mt-10 is a utility class that applies a margin-top to an element.     - **Tailwind**: mt-0, mt-10
+
 - **Padding**: Adds space inside an element.  
   - **Tailwind**: `p-{size}`, `pt-{size}`, `pr-{size}`, `pb-{size}`, `pl-{size}`
+
 
 ## Sizing
 
@@ -200,4 +204,37 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 - **Use Mnemonics**: Create phrases to remember classes and properties.
 - **Practice with Examples**: Apply in small projects to reinforce learning.
 
-## Conclusion
+## Note from nextJS
+
+In a Next.js application, the "use client"; directive is placed at the top of a file to ensure that a component is rendered on the client side rather than the server side.
+
+## layout.tsx
+
+In a Next.js project, layout.tsx is a special file that defines a shared layout for a specific part of your app. It acts as a template, helping to standardize the appearance and structure of pages or groups of pages. For example, you might use layout.tsx to define a header, sidebar, or footer that appears on every page within a given route.
+
+## page.tsx
+
+It  will render if folder is posted as localhost::3000/folderName
+
+## Rendering children from Root
+
+while using layout.tsx in different folder, we need to render children in return. Otherwise children folders will not render their components.
+
+## How Route Groups Work Without Affecting the URL
+
+Parentheses folders like (users) and (settings) are used only for grouping and will not appear in the URL.
+
+```plaintext
+app/
+├── dashboard/
+│   ├── (users)/
+│   │   ├── list/
+│   │   │   └── page.tsx  // URL: /dashboard/list
+│   │   └── [id]/
+│   │       └── page.tsx  // URL: /dashboard/:id
+│   └── (settings)/
+│       ├── general/
+│       │   └── page.tsx  // URL: /dashboard/general
+│       └── profile/
+│           └── page.tsx  // URL: /dashboard/profile
+```plaintext
